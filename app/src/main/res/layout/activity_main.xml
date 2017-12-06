@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.azhar.android.parking_application.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/ic_launcher"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <EditText
+            android:id="@+id/cardReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="28dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="CAR REG"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <EditText
+            android:id="@+id/uniquePin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/cardReg"
+            android:layout_below="@+id/cardReg"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Unique Pin"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <EditText
+            android:id="@+id/timeIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/uniquePin"
+            android:layout_below="@+id/uniquePin"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Time In"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <EditText
+            android:id="@+id/timeOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/timeIn"
+            android:layout_below="@+id/timeIn"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Time out "
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <EditText
+            android:id="@+id/cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/timeOut"
+            android:layout_below="@+id/timeOut"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Cost"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <EditText
+            android:id="@+id/slot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/cost"
+            android:layout_below="@+id/cost"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/background_light"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Next Available Slot"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="81dp"
+            android:layout_marginStart="57dp"
+            android:background="@android:color/background_light"
+            android:text="Confirm"
+            android:textColor="@android:color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/slot" />
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/confirm"
+            android:layout_below="@+id/confirm"
+            android:layout_marginStart="30dp"
+            android:text="TextView"
+            android:textColor="@android:color/darker_gray"/>
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

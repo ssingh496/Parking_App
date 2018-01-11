@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/androidbgimage"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
     tools:context="com.azhar.android.parking_application.MainActivity">
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
 
         <EditText
             android:id="@+id/cardReg"
@@ -23,12 +19,12 @@
             android:layout_marginStart="28dp"
             android:background="@android:color/background_light"
             android:ems="10"
+            android:hint="CAR REG"
             android:inputType="textPersonName"
-            android:text="CAR REG"
             android:textColor="@android:color/holo_blue_dark" />
 
         <EditText
-            android:id="@+id/uniquePin"
+            android:id="@+id/parkingSlotNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/cardReg"
@@ -36,21 +32,21 @@
             android:layout_marginTop="28dp"
             android:background="@android:color/background_light"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Unique Pin"
+            android:hint="Parking Slot 1-15"
+            android:inputType="number"
             android:textColor="@android:color/holo_blue_dark" />
 
         <EditText
             android:id="@+id/timeIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/uniquePin"
-            android:layout_below="@+id/uniquePin"
+            android:layout_alignEnd="@+id/parkingSlotNumber"
+            android:layout_below="@+id/parkingSlotNumber"
             android:layout_marginTop="28dp"
             android:background="@android:color/background_light"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Time In"
+            android:hint="Time In"
+            android:inputType="datetime"
             android:textColor="@android:color/holo_blue_dark" />
 
         <EditText
@@ -62,11 +58,11 @@
             android:layout_marginTop="28dp"
             android:background="@android:color/background_light"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Time out "
+            android:hint="Time out "
+            android:inputType="datetime"
             android:textColor="@android:color/holo_blue_dark" />
 
-        <EditText
+        <TextView
             android:id="@+id/cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,10 +70,11 @@
             android:layout_below="@+id/timeOut"
             android:layout_marginTop="28dp"
             android:background="@android:color/background_light"
-            android:ems="10"
+            android:ems="20"
+            android:hint="Cost"
             android:inputType="textPersonName"
-            android:text="Cost"
-            android:textColor="@android:color/holo_blue_dark" />
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_alignEnd="@+id/timeOut" />
 
         <EditText
             android:id="@+id/slot"
@@ -88,33 +85,60 @@
             android:layout_marginTop="28dp"
             android:background="@android:color/background_light"
             android:ems="10"
+            android:hint="Parking Slot Availbility"
             android:inputType="textPersonName"
-            android:text="Next Available Slot"
             android:textColor="@android:color/holo_blue_dark" />
 
         <Button
             android:id="@+id/confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="81dp"
-            android:layout_marginStart="57dp"
+            android:layout_alignEnd="@+id/slot"
+            android:layout_below="@+id/slot"
+            android:layout_marginEnd="61dp"
+            android:layout_marginTop="20dp"
             android:background="@android:color/background_light"
-            android:text="Confirm"
-            android:textColor="@android:color/black"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/slot" />
+            android:hint="Confirm"
+            android:textColor="@android:color/black" />
 
-        <EditText
-            android:id="@+id/message"
+        <Button
+            android:id="@+id/bookingEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/confirm"
+            android:layout_marginTop="28dp"
+            android:text="Book Parking"
+            android:layout_marginEnd="11dp"
             android:layout_below="@+id/confirm"
-            android:layout_marginStart="30dp"
-            android:text="TextView"
-            android:textColor="@android:color/darker_gray"/>
+            android:layout_alignEnd="@+id/slot" />
 
-    </RelativeLayout>
+        <TextClock
+            android:id="@+id/digitalClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:background="#0f0"
+            android:padding="20dp"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@+id/notificationBooking" />
+
+        <TextView
+            android:id="@+id/notificationBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:ems="20"
+            android:padding="10dp"
+            android:inputType="datetime"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text=" Parking Time starts"
+            android:visibility="invisible"
+            android:layout_above="@+id/digitalClock"
+            android:layout_alignStart="@+id/confirm" />
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>
